@@ -3,1376 +3,1493 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yatharth Sungrid Energy – Power your home or business with clean, affordable solar energy. Free consultation, government subsidies, 25+ year lifespan." />
-  <meta name="keywords" content="solar energy, home solar, business solar, solar installation, green energy, solar panels India, Yatharth Sungrid Energy" />
-  <title>Yatharth Sungrid Energy | Power Your Future with Solar Energy</title>
+  <meta name="description" content="Yatharth Sungrid Energy provides clean, affordable solar energy for homes, societies, businesses, schools, hospitals, and hotels." />
+  <meta name="keywords" content="solar energy, rooftop solar, solar installation India, solar panels, Yatharth Sungrid Energy" />
+  <title>Yatharth Sungrid Energy | Clean Solar Power Solutions</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
-  <!-- Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
   <style>
-    /* ===================== RESET & VARIABLES ===================== */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
-      --green-900: #0a2e00;
-      --green-800: #14520a;
-      --green-700: #1a6e0e;
-      --green-600: #2d8a1a;
-      --green-500: #3da622;
-      --green-400: #56c235;
-      --green-300: #82d960;
-      --green-100: #d4f5c0;
-      --green-50:  #edfbe3;
-
-      --yellow-500: #f5c400;
-      --yellow-400: #ffd429;
-      --yellow-300: #ffe066;
-      --yellow-100: #fff7cc;
-
-      --dark: #0d1a07;
-      --text: #1a2e12;
-      --muted: #4a6640;
-      --light-bg: #f4fbef;
-      --white: #ffffff;
-
-      --font-head: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
-      --radius: 12px;
-      --radius-sm: 8px;
-      --shadow: 0 4px 24px rgba(13,60,0,0.10);
-      --shadow-lg: 0 12px 48px rgba(13,60,0,0.18);
+      --green-950: #07130d;
+      --green-900: #0d2518;
+      --green-800: #143820;
+      --green-700: #1c5f32;
+      --green-600: #278542;
+      --green-500: #39b65d;
+      --green-100: #def8e6;
+      --green-50: #f1fbf4;
+      --yellow-500: #f2c230;
+      --yellow-100: #fff3c4;
+      --ink: #111827;
+      --text: #26332a;
+      --muted: #66736b;
+      --line: #dfe8e1;
+      --paper: #ffffff;
+      --soft: #f6f8f4;
+      --radius: 8px;
+      --shadow: 0 22px 60px rgba(10, 32, 18, 0.12);
     }
 
-    html { scroll-behavior: smooth; overflow-x: hidden; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
 
     body {
-      font-family: var(--font-body);
-      color: var(--text);
-      background: var(--white);
-      line-height: 1.6;
+      min-width: 320px;
       overflow-x: hidden;
-      width: 100%;
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      background: var(--paper);
+      line-height: 1.6;
     }
 
-    /* ===================== SCROLL FADE ANIMATION ===================== */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(36px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    /* ===================== NAVBAR ===================== */
-    #navbar {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(45,138,26,0.12);
-      transition: box-shadow 0.3s;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
-    #navbar.scrolled {
-      box-shadow: 0 2px 20px rgba(13,60,0,0.10);
+
+    button,
+    input,
+    textarea {
+      font: inherit;
     }
-    .nav-inner {
-      max-width: 1180px;
+
+    .page {
+      overflow: hidden;
+      background: var(--paper);
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
-      padding: 0 24px;
-      height: 68px;
+    }
+
+    .section {
+      padding: 96px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 32px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--green-100);
+      color: var(--green-700);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(280px, 0.7fr);
+      gap: 32px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .section-title {
+      margin-top: 16px;
+      color: var(--ink);
+      font-size: clamp(32px, 4vw, 56px);
+      font-weight: 900;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 620px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 46px;
+      padding: 13px 20px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: var(--yellow-500);
+      color: #1d1703;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      background: #ffd54d;
+    }
+
+    .btn-ghost {
+      background: rgba(255,255,255,0.10);
+      border-color: rgba(255,255,255,0.22);
+      color: #fff;
+    }
+
+    .btn-ghost:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.18);
+    }
+
+    .site-header {
+      position: fixed;
+      top: 20px;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      pointer-events: none;
+    }
+
+    .nav {
+      pointer-events: auto;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      gap: 18px;
+      min-height: 66px;
+      padding: 10px 12px 10px 18px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 999px;
+      background: rgba(8, 18, 16, 0.64);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 50px rgba(0,0,0,0.22);
     }
-    .nav-logo {
+
+    .brand {
       display: flex;
       align-items: center;
       gap: 10px;
-      text-decoration: none;
+      min-width: 0;
+      color: #fff;
+      font-weight: 900;
+      letter-spacing: -0.03em;
     }
-    .nav-logo-icon {
+
+    .brand-mark {
       width: 38px;
       height: 38px;
-      background: linear-gradient(135deg, var(--green-500), var(--yellow-400));
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-size: 18px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      background: linear-gradient(135deg, var(--green-500), var(--yellow-500));
+      color: var(--green-950);
     }
-    .nav-logo-text {
-      font-family: var(--font-head);
-      font-weight: 800;
-      font-size: 17px;
-      color: var(--green-700);
-      letter-spacing: -0.3px;
+
+    .brand span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
-    .nav-logo-text span { color: var(--yellow-500); }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 32px;
-      list-style: none;
+      gap: 4px;
+      padding: 5px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
     }
+
     .nav-links a {
-      font-size: 15px;
-      font-weight: 500;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-      position: relative;
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: rgba(255,255,255,0.78);
+      font-size: 14px;
+      font-weight: 700;
     }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0; right: 0;
-      height: 2px;
-      background: var(--green-500);
-      transform: scaleX(0);
-      transition: transform 0.25s ease;
-      border-radius: 2px;
-    }
-    .nav-links a:hover { color: var(--green-600); }
-    .nav-links a:hover::after { transform: scaleX(1); }
 
-    .btn-cta {
-      background: var(--green-600);
+    .nav-links a:hover {
       color: #fff;
-      border: none;
-      padding: 10px 22px;
-      border-radius: 50px;
-      font-family: var(--font-body);
-      font-size: 15px;
-      font-weight: 500;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-      white-space: nowrap;
+      background: rgba(255,255,255,0.11);
     }
-    .btn-cta:hover {
-      background: var(--green-700);
-      transform: translateY(-1px);
-      box-shadow: 0 4px 16px rgba(45,138,26,0.30);
-    }
-    .btn-cta:active { transform: scale(0.97); }
 
-    /* Hamburger */
-    .hamburger {
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-phone {
+      color: rgba(255,255,255,0.78);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .menu-toggle {
       display: none;
-      flex-direction: column;
-      gap: 5px;
+      width: 44px;
+      height: 44px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      color: #fff;
       cursor: pointer;
-      padding: 6px;
-      border: none;
-      background: none;
     }
-    .hamburger span {
-      display: block;
-      width: 24px;
-      height: 2px;
-      background: var(--green-700);
-      border-radius: 2px;
-      transition: transform 0.3s, opacity 0.3s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
     .mobile-menu {
       display: none;
-      flex-direction: column;
-      gap: 0;
-      background: var(--white);
-      border-top: 1px solid rgba(45,138,26,0.1);
-      padding: 12px 24px 20px;
+      width: min(1180px, calc(100% - 40px));
+      margin: 10px auto 0;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 18px;
+      background: rgba(8,18,16,0.94);
+      backdrop-filter: blur(18px);
+      pointer-events: auto;
     }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a {
-      padding: 11px 0;
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--muted);
-      text-decoration: none;
-      border-bottom: 1px solid rgba(45,138,26,0.08);
-    }
-    .mobile-menu a:last-child { border-bottom: none; margin-top: 8px; }
 
-    /* ===================== HERO ===================== */
-    #hero {
-      min-height: 100vh;
-      background:
-        linear-gradient(to bottom right, rgba(10,46,0,0.85), rgba(13,60,0,0.75)),
-        url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1600&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      padding: 110px 32px 70px;
+    .mobile-menu.open {
+      display: grid;
+      gap: 6px;
+    }
+
+    .mobile-menu a {
+      padding: 12px 14px;
+      border-radius: var(--radius);
+      color: rgba(255,255,255,0.82);
+      font-weight: 700;
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
+    .hero {
       position: relative;
-      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      color: #fff;
+      background:
+        linear-gradient(90deg, rgba(3,8,12,0.90) 0%, rgba(7,20,22,0.68) 45%, rgba(3,8,12,0.82) 100%),
+        url("https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1800&q=85") center/cover no-repeat;
     }
-    .hero-inner {
-      max-width: 1180px;
-      margin: 0 auto;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 63% 34%, rgba(57,182,93,0.28), transparent 28%),
+        linear-gradient(180deg, transparent 54%, rgba(3,8,12,0.86));
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
       width: 100%;
+      padding: 150px 0 0;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      min-height: 100vh;
     }
-    .hero-badge {
+
+    .hero-main {
+      align-self: center;
+      width: min(900px, 100%);
+      padding-bottom: 72px;
+    }
+
+    .hero-kicker {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(245,196,0,0.18);
-      border: 1px solid rgba(245,196,0,0.40);
-      color: var(--yellow-300);
-      padding: 7px 16px;
-      border-radius: 50px;
-      font-size: 13px;
-      font-weight: 500;
-      margin-bottom: 28px;
-      letter-spacing: 0.5px;
-    }
-    .hero-badge i { font-size: 12px; }
-    .hero h1 {
-      font-family: var(--font-head);
-      font-size: clamp(32px, 5.5vw, 72px);
-      font-weight: 800;
-      color: #fff;
-      line-height: 1.10;
-      letter-spacing: -1px;
       margin-bottom: 22px;
-      max-width: 720px;
-      text-shadow: 0 2px 16px rgba(0,0,0,0.35);
-    }
-    .hero h1 span { color: var(--yellow-400); }
-    .hero p {
-      font-size: clamp(16px, 2vw, 20px);
-      color: rgba(255,255,255,0.82);
-      max-width: 540px;
-      margin-bottom: 40px;
-      line-height: 1.65;
-    }
-    .hero-btns {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .btn-primary {
-      background: var(--yellow-500);
-      color: var(--dark);
-      padding: 14px 30px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: 600;
-      font-family: var(--font-body);
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    }
-    .btn-primary:hover {
-      background: var(--yellow-400);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(245,196,0,0.45);
-    }
-    .btn-outline {
-      background: transparent;
-      color: #fff;
-      padding: 14px 30px;
-      border-radius: 50px;
-      font-size: 16px;
-      font-weight: 500;
-      font-family: var(--font-body);
-      border: 2px solid rgba(255,255,255,0.45);
-      cursor: pointer;
-      text-decoration: none;
-      transition: background 0.2s, border-color 0.2s;
-    }
-    .btn-outline:hover {
+      padding: 8px 13px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
       background: rgba(255,255,255,0.10);
-      border-color: rgba(255,255,255,0.75);
-    }
-    .hero-stats {
-      display: flex;
-      gap: 40px;
-      margin-top: 60px;
-      flex-wrap: wrap;
-    }
-    .hero-stat {
-      display: flex;
-      flex-direction: column;
-    }
-    .hero-stat strong {
-      font-family: var(--font-head);
-      font-size: 32px;
-      font-weight: 800;
-      color: var(--yellow-400);
-    }
-    .hero-stat span {
-      font-size: 14px;
-      color: rgba(255,255,255,0.65);
-    }
-
-    /* ===================== SECTION BASE ===================== */
-    section { padding: 96px 48px; box-sizing: border-box; width: 100%; }
-    .section-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
-    .section-label {
-      display: inline-block;
+      color: #9bf3b4;
       font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 2px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--green-500);
-      margin-bottom: 14px;
-    }
-    .section-title {
-      font-family: var(--font-head);
-      font-size: clamp(24px, 3vw, 46px);
-      font-weight: 800;
-      color: var(--text);
-      line-height: 1.18;
-      letter-spacing: -0.5px;
-      margin-bottom: 16px;
-      word-break: break-word;
-      overflow-wrap: break-word;
-      max-width: 100%;
-    }
-    .section-title span { color: var(--green-600); }
-    .section-sub {
-      font-size: 17px;
-      color: var(--muted);
-      max-width: 520px;
-      line-height: 1.7;
-      margin-bottom: 56px;
     }
 
-    /* ===================== SERVICES ===================== */
-    #services { background: var(--light-bg); }
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
+    .hero h1 {
+      max-width: 860px;
+      font-size: clamp(46px, 8vw, 104px);
+      font-weight: 900;
+      line-height: 0.96;
+      letter-spacing: -0.06em;
     }
-    .service-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      padding: 36px 32px;
-      border: 1px solid rgba(45,138,26,0.10);
-      transition: transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      overflow: hidden;
+
+    .hero h1 span {
+      display: block;
+      color: rgba(255,255,255,0.58);
     }
-    .service-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--green-500), var(--yellow-400));
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s ease;
+
+    .hero-text {
+      max-width: 650px;
+      margin-top: 26px;
+      color: rgba(255,255,255,0.76);
+      font-size: clamp(16px, 2vw, 19px);
     }
-    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-    .service-card:hover::before { transform: scaleX(1); }
-    .service-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--green-50);
-      border-radius: 14px;
+
+    .hero-actions {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 26px;
-      color: var(--green-600);
-      margin-bottom: 22px;
-      transition: background 0.3s;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
     }
-    .service-card:hover .service-icon { background: var(--green-100); }
-    .service-card h3 {
-      font-family: var(--font-head);
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 12px;
-    }
-    .service-card p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
-    .service-card .card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--green-600);
-      text-decoration: none;
-      transition: gap 0.2s;
-    }
-    .service-card .card-link:hover { gap: 10px; }
 
-    /* ===================== SOLUTIONS SHOWCASE ===================== */
-    #solutions-showcase {
-      background:
-        radial-gradient(circle at 50% 0%, rgba(130,217,96,0.30), transparent 34%),
-        linear-gradient(180deg, #17384b 0%, #102c3c 42%, #0b241b 100%);
-      color: #fff;
-      padding-top: 92px;
-      padding-bottom: 92px;
-    }
-    .solutions-panel {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: clamp(22px, 4vw, 40px);
-      border: 2px solid rgba(130,255,166,0.68);
-      border-radius: 32px;
-      background: linear-gradient(180deg, rgba(220,246,240,0.18), rgba(12,60,35,0.42));
-      box-shadow:
-        0 0 34px rgba(95,255,143,0.36),
-        inset 0 0 24px rgba(255,255,255,0.10);
-    }
-    .solutions-kicker {
-      font-family: var(--font-head);
-      font-size: clamp(24px, 4.5vw, 54px);
-      font-weight: 800;
-      line-height: 1.05;
-      text-align: center;
-      text-transform: uppercase;
-      color: #d7ffe1;
-      text-shadow: 0 0 20px rgba(124,255,153,0.80);
-      margin-bottom: 12px;
-    }
-    .solutions-title {
-      font-family: var(--font-head);
-      font-size: clamp(26px, 5vw, 58px);
-      font-weight: 800;
-      line-height: 1.04;
-      text-align: center;
-      text-transform: uppercase;
-      color: #073b12;
-      background: rgba(190,255,205,0.78);
-      border-radius: 16px;
-      padding: 18px 16px;
-      margin-bottom: 18px;
-      text-shadow: 0 0 16px rgba(255,255,255,0.75);
-    }
-    .solutions-subtitle {
-      font-family: var(--font-head);
-      font-size: clamp(20px, 3vw, 38px);
-      font-weight: 800;
-      line-height: 1.18;
-      letter-spacing: 1px;
-      text-align: center;
-      text-transform: uppercase;
-      color: #06120a;
-      background: rgba(242,250,247,0.74);
-      border-radius: 14px;
-      padding: 14px 18px;
-      margin-bottom: 22px;
-    }
-    .solutions-mosaic {
+    .hero-stats {
+      width: min(860px, 100%);
+      margin-left: auto;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.16);
+      border-bottom: 0;
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-stat {
+      min-width: 0;
+      padding: 24px 22px;
+      border-left: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .hero-stat:first-child {
+      border-left: 0;
+    }
+
+    .hero-stat strong {
+      display: block;
+      color: #fff;
+      font-size: clamp(28px, 4vw, 46px);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-stat span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255,255,255,0.68);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .intro-strip {
+      background: var(--green-950);
+      color: #fff;
+      padding: 26px 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
     }
-    .solution-tile {
-      min-height: 220px;
-      border: 2px solid rgba(255,255,255,0.78);
-      border-radius: 18px;
-      overflow: hidden;
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.28);
-    }
-    .solution-tile::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0,0,0,0.04), rgba(0,45,12,0.86));
-    }
-    .solution-tile.wide {
-      grid-column: 1 / -1;
-      min-height: 300px;
-    }
-    .solution-tile.small { min-height: 190px; }
-    .solution-copy {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 18px;
-      z-index: 1;
-      color: #fff;
-      text-shadow: 0 3px 12px rgba(0,0,0,0.65);
-    }
-    .solution-copy h3 {
-      font-family: var(--font-head);
-      font-size: clamp(22px, 3vw, 40px);
-      font-weight: 800;
-      line-height: 1.03;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .solution-copy p {
-      font-size: 15px;
-      font-weight: 700;
-      color: rgba(255,255,255,0.88);
-    }
-    .tile-school { background-image: url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1400&q=80'); }
-    .tile-hospital { background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1200&q=80'); }
-    .tile-hotel { background-image: url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=900&q=80'); }
-    .tile-rooftop { background-image: url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1000&q=80'); }
-    .tile-storage { background-image: url('https://images.unsplash.com/photo-1624397640148-949b1732bb0a?w=1000&q=80'); }
-    .tile-water { background-image: url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=1000&q=80'); }
-    .tile-grid { background-image: url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=1000&q=80'); }
 
-    /* ===================== HOW IT WORKS ===================== */
-    #how-it-works { background: var(--white); overflow: visible; padding-top: 80px; }
-    #how-it-works .section-inner { overflow: visible; }
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      position: relative;
-      margin-top: 8px;
-      overflow: visible;
-    }
-    .steps-grid::before {
-      content: '';
-      position: absolute;
-      top: 36px; left: 12.5%; right: 12.5%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--green-300), var(--yellow-400));
-      z-index: 0;
-    }
-    .step {
+    .intro-item {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      padding: 8px 16px 0;
-      position: relative;
-      z-index: 1;
-    }
-    .step-num {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: var(--white);
-      border: 3px solid var(--green-400);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-head);
-      font-size: 22px;
-      font-weight: 800;
-      color: var(--green-600);
-      margin-bottom: 24px;
-      transition: background 0.3s, color 0.3s;
-    }
-    .step:hover .step-num {
-      background: var(--green-600);
-      color: #fff;
-      border-color: var(--green-600);
-    }
-    .step-icon-wrap {
-      width: 54px;
-      height: 54px;
-      border-radius: 12px;
-      background: var(--green-50);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      color: var(--green-600);
-      margin-bottom: 18px;
-    }
-    .step h3 {
-      font-family: var(--font-head);
-      font-size: 19px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 10px;
-    }
-    .step p { font-size: 14px; color: var(--muted); line-height: 1.65; }
-
-    /* ===================== BENEFITS ===================== */
-    #benefits { background: var(--green-900); }
-    #benefits .section-inner { padding: 0 16px; }
-    #benefits .section-title { color: #fff; }
-    .benefits-title {
-      color: #fff !important;
-      font-family: var(--font-head) !important;
-      font-size: 36px !important;
-      font-weight: 800 !important;
-      line-height: 1.2 !important;
-      letter-spacing: -0.5px !important;
-      word-break: break-word !important;
-      overflow-wrap: break-word !important;
-      white-space: normal !important;
-      max-width: 100% !important;
-      margin-bottom: 16px;
-    }
-    @media (max-width: 900px) { .benefits-title { font-size: 28px !important; } }
-    @media (max-width: 600px) { .benefits-title { font-size: 24px !important; } }
-    #benefits .section-sub { color: rgba(255,255,255,0.65); }
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .benefit-card {
-      background: rgba(255,255,255,0.06);
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px;
       border: 1px solid rgba(255,255,255,0.10);
       border-radius: var(--radius);
-      padding: 32px 28px;
-      transition: background 0.3s, transform 0.3s;
+      background: rgba(255,255,255,0.05);
     }
-    .benefit-card:hover {
-      background: rgba(255,255,255,0.10);
-      transform: translateY(-4px);
-    }
-    .benefit-icon {
-      width: 54px;
-      height: 54px;
-      background: rgba(245,196,0,0.15);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 22px;
-      color: var(--yellow-400);
-      margin-bottom: 20px;
-    }
-    .benefit-card h3 {
-      font-family: var(--font-head);
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 10px;
-    }
-    .benefit-card p { font-size: 14px; color: rgba(255,255,255,0.60); line-height: 1.7; }
 
-    /* ===================== TESTIMONIALS ===================== */
-    #testimonials { background: var(--light-bg); }
-    .testi-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
+    .intro-item i {
+      color: var(--yellow-500);
+      margin-top: 4px;
     }
-    .testi-card {
-      background: var(--white);
+
+    .intro-item strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .intro-item span {
+      color: rgba(255,255,255,0.62);
+      font-size: 14px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      min-width: 0;
+      border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 32px;
-      border: 1px solid rgba(45,138,26,0.10);
-      transition: transform 0.3s, box-shadow 0.3s;
+      background: var(--paper);
+      box-shadow: 0 10px 32px rgba(21,58,32,0.06);
     }
-    .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
-    .testi-stars { color: var(--yellow-500); font-size: 15px; margin-bottom: 16px; }
-    .testi-text {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.75;
-      margin-bottom: 24px;
-      font-style: italic;
-    }
-    .testi-author {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .testi-avatar {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--green-400), var(--yellow-400));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-head);
-      font-weight: 700;
-      font-size: 16px;
-      color: #fff;
-    }
-    .testi-name {
-      font-weight: 600;
-      font-size: 15px;
-      color: var(--text);
-    }
-    .testi-location { font-size: 13px; color: var(--muted); }
 
-    /* ===================== LEAD FORM ===================== */
-    #contact { background: var(--white); }
-    .contact-wrap {
+    .service-card {
+      padding: 26px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
+      gap: 18px;
     }
-    .contact-info h2 {
-      font-family: var(--font-head);
-      font-size: clamp(28px, 3.5vw, 42px);
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.8px;
-      margin-bottom: 16px;
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--green-100);
+      color: var(--green-700);
+      font-size: 20px;
+    }
+
+    .service-card h3,
+    .solution-card h3,
+    .benefit-card h3,
+    .testimonial-card h3 {
+      color: var(--ink);
+      font-size: 20px;
       line-height: 1.2;
     }
-    .contact-info h2 span { color: var(--green-600); }
-    .contact-info p { font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 32px; }
-    .contact-perks { display: flex; flex-direction: column; gap: 14px; }
-    .contact-perk {
+
+    .service-card p,
+    .solution-card p,
+    .benefit-card p,
+    .testimonial-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .solutions {
+      background: var(--soft);
+    }
+
+    .solution-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr 0.8fr;
+      grid-auto-rows: 230px;
+      gap: 18px;
+    }
+
+    .solution-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 230px;
+      padding: 22px;
+      display: flex;
+      align-items: flex-end;
+      border-radius: var(--radius);
+      color: #fff;
+      background: var(--green-900);
+    }
+
+    .solution-card.large {
+      grid-row: span 2;
+    }
+
+    .solution-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--image) center/cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .solution-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(4,18,10,0.88));
+    }
+
+    .solution-card > div {
+      position: relative;
+      z-index: 1;
+    }
+
+    .solution-card h3 {
+      color: #fff;
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing: -0.03em;
+    }
+
+    .solution-card p {
+      margin-top: 8px;
+      color: rgba(255,255,255,0.78);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .step-card {
+      padding: 24px;
+      position: relative;
+    }
+
+    .step-number {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 32px;
+      border-radius: 50%;
+      background: var(--green-950);
+      color: #fff;
+      font-weight: 900;
+    }
+
+    .step-card h3 {
+      margin-bottom: 10px;
+      color: var(--ink);
+      font-size: 19px;
+    }
+
+    .step-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .benefits {
+      background: var(--green-950);
+      color: #fff;
+    }
+
+    .benefits .section-title,
+    .benefits .section-copy {
+      color: #fff;
+    }
+
+    .benefits .section-copy {
+      color: rgba(255,255,255,0.62);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .benefit-card {
+      padding: 24px;
+      border-color: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      box-shadow: none;
+    }
+
+    .benefit-card h3 {
+      color: #fff;
+      margin: 18px 0 10px;
+    }
+
+    .benefit-card p {
+      color: rgba(255,255,255,0.62);
+    }
+
+    .benefit-card .icon-box {
+      background: rgba(242,194,48,0.16);
+      color: var(--yellow-500);
+    }
+
+    .testimonials {
+      background: var(--soft);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .testimonial-card {
+      padding: 24px;
+    }
+
+    .stars {
+      color: var(--yellow-500);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .quote {
+      min-height: 150px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .person {
       display: flex;
       align-items: center;
       gap: 12px;
-      font-size: 15px;
-      color: var(--text);
+      margin-top: 22px;
     }
-    .contact-perk i { color: var(--green-500); font-size: 16px; width: 20px; }
 
-    .lead-form {
-      background: var(--light-bg);
-      border-radius: var(--radius);
-      padding: 40px 36px;
-      border: 1px solid rgba(45,138,26,0.12);
+    .avatar {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--green-500), var(--yellow-500));
+      color: var(--green-950);
+      font-weight: 900;
     }
-    .lead-form h3 {
-      font-family: var(--font-head);
-      font-size: 22px;
-      font-weight: 700;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    .lead-form p.form-sub { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
-    .form-group { margin-bottom: 18px; }
-    .form-group label {
+
+    .person strong {
       display: block;
-      font-size: 13px;
-      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .person span {
+      display: block;
       color: var(--muted);
-      margin-bottom: 7px;
+      font-size: 13px;
     }
-    .form-group input,
-    .form-group select {
-      width: 100%;
-      padding: 12px 16px;
-      border: 1.5px solid rgba(45,138,26,0.18);
-      border-radius: var(--radius-sm);
-      font-family: var(--font-body);
-      font-size: 15px;
+
+    .contact {
+      background: linear-gradient(180deg, var(--paper), var(--green-50));
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .contact-panel {
+      position: sticky;
+      top: 120px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .contact-list li {
+      list-style: none;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
       color: var(--text);
-      background: var(--white);
-      outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      font-weight: 600;
     }
-    .form-group input:focus,
-    .form-group select:focus {
-      border-color: var(--green-500);
-      box-shadow: 0 0 0 3px rgba(45,138,26,0.10);
-    }
-    .form-group input.error { border-color: #e24b4a; }
-    .form-error {
-      display: none;
-      font-size: 12px;
-      color: #e24b4a;
+
+    .contact-list i {
+      color: var(--green-600);
       margin-top: 5px;
     }
-    .form-error.show { display: block; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .lead-form {
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .form-title {
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 26px;
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .form-sub {
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: #fbfdfb;
+      color: var(--ink);
+      padding: 14px 15px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--green-500);
+      box-shadow: 0 0 0 4px rgba(57,182,93,0.13);
+    }
+
+    .form-group input.error,
+    .form-group textarea.error {
+      border-color: #dc2626;
+    }
+
+    .form-error {
+      display: none;
+      margin-top: 6px;
+      color: #dc2626;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .form-error.show {
+      display: block;
+    }
+
     .btn-submit {
       width: 100%;
-      padding: 14px;
-      background: var(--green-600);
+      border: 0;
+      background: var(--green-700);
       color: #fff;
-      border: none;
-      border-radius: 50px;
-      font-family: var(--font-body);
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.2s, transform 0.15s;
-      margin-top: 8px;
-    }
-    .btn-submit:hover { background: var(--green-700); transform: translateY(-1px); }
-    .btn-submit:active { transform: scale(0.98); }
-    #form-success {
-      display: none;
-      background: var(--green-50);
-      border: 1px solid var(--green-300);
-      border-radius: var(--radius-sm);
-      padding: 16px;
-      text-align: center;
-      color: var(--green-700);
-      font-weight: 500;
-      margin-top: 16px;
     }
 
-    /* ===================== FOOTER ===================== */
-    footer {
-      background: var(--dark);
-      color: rgba(255,255,255,0.7);
-      padding: 64px 24px 32px;
+    .btn-submit:hover {
+      background: var(--green-600);
     }
-    .footer-inner { max-width: 1180px; margin: 0 auto; }
+
+    .form-success {
+      display: none;
+      margin-top: 16px;
+      padding: 14px;
+      border: 1px solid #bdecc8;
+      border-radius: var(--radius);
+      background: var(--green-50);
+      color: var(--green-700);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .footer {
+      background: #07100b;
+      color: rgba(255,255,255,0.66);
+      padding: 58px 0 28px;
+    }
+
     .footer-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 48px;
-      margin-bottom: 48px;
-    }
-    .footer-brand p {
-      font-size: 14px;
-      line-height: 1.75;
-      margin: 16px 0 24px;
-      color: rgba(255,255,255,0.50);
-    }
-    .social-links { display: flex; gap: 12px; }
-    .social-links a {
-      width: 38px; height: 38px;
-      background: rgba(255,255,255,0.07);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.60);
-      text-decoration: none;
-      font-size: 16px;
-      transition: background 0.2s, color 0.2s;
-    }
-    .social-links a:hover { background: var(--green-600); color: #fff; }
-    .footer-col h4 {
-      font-family: var(--font-head);
-      font-size: 16px;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-    .footer-col ul a {
-      font-size: 14px;
-      color: rgba(255,255,255,0.50);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .footer-col ul a:hover { color: var(--yellow-300); }
-    .footer-contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 14px;
-      color: rgba(255,255,255,0.50);
-      margin-bottom: 12px;
-    }
-    .footer-contact-item i { color: var(--green-400); font-size: 14px; margin-top: 2px; }
-    .footer-bottom {
-      border-top: 1px solid rgba(255,255,255,0.08);
-      padding-top: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      font-size: 13px;
-      color: rgba(255,255,255,0.35);
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 36px;
+      margin-bottom: 38px;
     }
 
-    /* ===================== RESPONSIVE ===================== */
-    @media (max-width: 900px) {
-      .nav-links, .nav-cta { display: none; }
-      .hamburger { display: flex; }
-      .contact-wrap { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .solutions-mosaic { gap: 14px; }
+    .footer .brand {
+      margin-bottom: 16px;
     }
-    @media (max-width: 768px) {
-      section { padding: 72px 32px; }
-      .steps-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 48px 20px;
+
+    .footer p,
+    .footer a,
+    .footer li {
+      color: rgba(255,255,255,0.62);
+      font-size: 14px;
+    }
+
+    .footer h3 {
+      margin-bottom: 16px;
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .footer ul {
+      display: grid;
+      gap: 9px;
+      list-style: none;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .social-links a {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.42);
+      font-size: 13px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav-phone {
+        display: none;
       }
-      .steps-grid::before { display: none; }
+
+      .menu-toggle {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero-stats,
+      .intro-grid,
+      .services-grid,
+      .benefits-grid,
+      .testimonial-grid,
+      .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .solution-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .solution-card.large {
+        grid-column: 1 / -1;
+        grid-row: auto;
+      }
+
+      .section-head,
+      .contact-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-panel {
+        position: static;
+      }
     }
-    @media (max-width: 600px) {
-      section { padding: 60px 24px; }
-      #hero { padding: 100px 24px 56px; }
-      .hero-stats { gap: 20px; }
-      .hero-stat strong { font-size: 26px; }
-      .form-row { grid-template-columns: 1fr; }
-      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-      .footer-bottom { flex-direction: column; text-align: center; }
-      .steps-grid { grid-template-columns: 1fr; gap: 36px; }
-      .solutions-panel { border-radius: 22px; }
-      .solutions-mosaic { grid-template-columns: 1fr; }
-      .solution-tile,
-      .solution-tile.wide,
-      .solution-tile.small { min-height: 230px; }
+
+    @media (max-width: 640px) {
+      .container,
+      .nav,
+      .mobile-menu {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .site-header {
+        top: 12px;
+      }
+
+      .nav {
+        min-height: 58px;
+      }
+
+      .brand span {
+        max-width: 170px;
+      }
+
+      .nav-actions .btn {
+        display: none;
+      }
+
+      .hero-grid {
+        padding-top: 118px;
+      }
+
+      .hero-main {
+        padding-bottom: 42px;
+      }
+
+      .hero h1 {
+        font-size: clamp(42px, 13vw, 62px);
+      }
+
+      .hero-actions,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .hero-stats,
+      .intro-grid,
+      .services-grid,
+      .solution-grid,
+      .process-grid,
+      .benefits-grid,
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stat {
+        border-left: 0;
+        border-top: 1px solid rgba(255,255,255,0.14);
+      }
+
+      .hero-stat:first-child {
+        border-top: 0;
+      }
+
+      .solution-grid {
+        grid-auto-rows: auto;
+      }
+
+      .solution-card {
+        min-height: 250px;
+      }
+
+      .lead-form {
+        padding: 24px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
 <body>
-
-<!-- ===================== NAVBAR ===================== -->
-<nav id="navbar" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo" aria-label="Yatharth Sungrid Energy Home">
-      <div class="nav-logo-icon"><i class="fa-solid fa-solar-panel"></i></div>
-      <span class="nav-logo-text">Yatharth<span>SungridEnergy</span></span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#solutions-showcase">Solutions</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="#contact" class="btn-cta">Get Free Quote</a>
-    <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#hero">Home</a>
-    <a href="#services">Services</a>
-    <a href="#solutions-showcase">Solutions</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#testimonials">Testimonials</a>
-    <a href="#contact" class="btn-cta" style="text-align:center;border-radius:50px;padding:12px 20px;">Get Free Quote</a>
-  </div>
-</nav>
-
-<!-- ===================== HERO ===================== -->
-<section id="hero">
-  <div class="hero-inner">
-    <div class="hero-badge"><i class="fa-solid fa-leaf"></i> India's Leading Solar Company</div>
-    <h1>Power Your Home<br />with <span>Solar Energy</span></h1>
-    <p>Switch to clean, renewable solar energy and cut your electricity bills by up to 90%. Zero upfront cost. Government subsidy available.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-primary"><i class="fa-solid fa-phone"></i>&nbsp; Get Free Consultation</a>
-      <a href="#how-it-works" class="btn-outline"><i class="fa-regular fa-circle-play"></i>&nbsp; See How It Works</a>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat"><strong>15,000+</strong><span>Installations Done</span></div>
-      <div class="hero-stat"><strong>90%</strong><span>Bill Reduction</span></div>
-      <div class="hero-stat"><strong>25 Yrs</strong><span>Panel Lifespan</span></div>
-      <div class="hero-stat"><strong>₹0</strong><span>Site Visit Cost</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SERVICES ===================== -->
-<section id="services">
-  <div class="section-inner">
-    <span class="section-label fade-up">What We Offer</span>
-    <h2 class="section-title fade-up">Solar Solutions for <span>Every Need</span></h2>
-    <p class="section-sub fade-up">From single homes to large commercial complexes — we design and install custom solar systems tailored to your energy requirements.</p>
-    <div class="services-grid">
-      <!-- Home Solar -->
-      <div class="service-card fade-up">
-        <div class="service-icon"><i class="fa-solid fa-house"></i></div>
-        <h3>Home Solar</h3>
-        <p>Reduce your home electricity bill drastically with our rooftop solar solutions. Easy EMI options, government subsidy up to ₹78,000 available.</p>
-        <a href="#contact" class="card-link">Get Started <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <!-- Society Solar -->
-      <div class="service-card fade-up" style="transition-delay:0.1s">
-        <div class="service-icon"><i class="fa-solid fa-building"></i></div>
-        <h3>Society Solar</h3>
-        <p>Power your entire housing society with shared solar rooftops. Reduce common area maintenance costs and earn credits from surplus generation.</p>
-        <a href="#contact" class="card-link">Get Started <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-      <!-- Business Solar -->
-      <div class="service-card fade-up" style="transition-delay:0.2s">
-        <div class="service-icon"><i class="fa-solid fa-industry"></i></div>
-        <h3>Business Solar</h3>
-        <p>Scale your commercial operations sustainably. Significant CAPEX savings, accelerated depreciation benefits, and ESG compliance for your brand.</p>
-        <a href="#contact" class="card-link">Get Started <i class="fa-solid fa-arrow-right"></i></a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== SOLUTIONS SHOWCASE ===================== -->
-<section id="solutions-showcase">
-  <div class="solutions-panel fade-up">
-    <div class="solutions-kicker">Solar Power Solutions</div>
-    <h2 class="solutions-title">Sustainable<br />Energy Systems</h2>
-    <p class="solutions-subtitle">Solar Power Solutions for Schools, Hospitals, Hotels</p>
-
-    <div class="solutions-mosaic" aria-label="Solar solution categories">
-      <article class="solution-tile wide tile-school">
-        <div class="solution-copy">
-          <h3>Institutional Solar</h3>
-          <p>Reliable rooftop systems for schools, hospitals and large campuses.</p>
-        </div>
-      </article>
-
-      <article class="solution-tile small tile-hospital">
-        <div class="solution-copy">
-          <h3>Healthcare</h3>
-          <p>Solar support for high-demand facilities.</p>
-        </div>
-      </article>
-
-      <article class="solution-tile small tile-hotel">
-        <div class="solution-copy">
-          <h3>Hotels</h3>
-          <p>Lower daytime energy costs for hospitality.</p>
-        </div>
-      </article>
-
-      <article class="solution-tile tile-rooftop">
-        <div class="solution-copy">
-          <h3>Solar Rooftop</h3>
-          <p>Maximize savings with clean roof-mounted power.</p>
-        </div>
-      </article>
-
-      <article class="solution-tile tile-storage">
-        <div class="solution-copy">
-          <h3>Power Backup &amp; Storage</h3>
-          <p>Battery-ready systems for better energy security.</p>
-        </div>
-      </article>
-
-      <article class="solution-tile tile-water">
-        <div class="solution-copy">
-          <h3>Solar Water Heating</h3>
-          <p>Efficient hot-water systems for homes and institutions.</p>
-        </div>
-      </article>
-
-      <article class="solution-tile tile-grid">
-        <div class="solution-copy">
-          <h3>Grid-Tied &amp; Off-Grid</h3>
-          <p>Choose the right system for your location and usage.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== HOW IT WORKS ===================== -->
-<section id="how-it-works">
-  <div class="section-inner">
-    <span class="section-label fade-up">The Process</span>
-    <h2 class="section-title fade-up">Go Solar in <span>4 Simple Steps</span></h2>
-    <p class="section-sub fade-up">From your first call to generating electricity — our end-to-end process is smooth, transparent, and stress-free.</p>
-    <div class="steps-grid">
-      <div class="step">
-        <div class="step-num">01</div>
-        <div class="step-icon-wrap"><i class="fa-solid fa-headset"></i></div>
-        <h3>Free Consultation</h3>
-        <p>Talk to our solar expert. Share your electricity bill & rooftop details. Get a customised solar proposal.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <div class="step-icon-wrap"><i class="fa-solid fa-ruler-combined"></i></div>
-        <h3>Site Survey & Design</h3>
-        <p>Our engineers visit your site, assess shading, and design the optimal solar system layout for you.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <div class="step-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
-        <h3>Installation</h3>
-        <p>Certified technicians install your panels in 1–2 days. We handle all permits and grid-connection paperwork.</p>
-      </div>
-      <div class="step">
-        <div class="step-num">04</div>
-        <div class="step-icon-wrap"><i class="fa-solid fa-piggy-bank"></i></div>
-        <h3>Savings Begin</h3>
-        <p>Start generating clean energy from day one. Monitor output via our app and watch your savings grow.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== BENEFITS ===================== -->
-<section id="benefits">
-  <div class="section-inner">
-    <span class="section-label fade-up" style="color:var(--yellow-400)">Why Solar</span>
-    <h2 class="section-title benefits-title fade-up">The Clear Benefits of <span style="color:var(--yellow-400)">Going Solar Today</span></h2>
-    <p class="section-sub fade-up">Investing in solar is investing in your future. Here's why thousands of Indian families choose Yatharth Sungrid Energy every year.</p>
-    <div class="benefits-grid">
-      <div class="benefit-card fade-up">
-        <div class="benefit-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
-        <h3>Save Money</h3>
-        <p>Slash electricity bills by up to 90% from month one. Your system pays for itself in 4–5 years and saves for 25+ more.</p>
-      </div>
-      <div class="benefit-card fade-up" style="transition-delay:0.1s">
-        <div class="benefit-icon"><i class="fa-solid fa-file-invoice"></i></div>
-        <h3>Government Subsidy</h3>
-        <p>Avail PM Surya Ghar subsidies up to ₹78,000. Our team handles all documentation and approvals on your behalf.</p>
-      </div>
-      <div class="benefit-card fade-up" style="transition-delay:0.2s">
-        <div class="benefit-icon"><i class="fa-solid fa-earth-asia"></i></div>
-        <h3>Eco-Friendly</h3>
-        <p>One rooftop solar system offsets over 1.5 tonnes of CO₂ per year — equivalent to planting 70 trees annually.</p>
-      </div>
-      <div class="benefit-card fade-up" style="transition-delay:0.3s">
-        <div class="benefit-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <h3>25+ Year Lifespan</h3>
-        <p>Top-tier Tier 1 panels with 25-year performance warranties. Maintenance-free and built for Indian weather.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== TESTIMONIALS ===================== -->
-<section id="testimonials">
-  <div class="section-inner">
-    <span class="section-label fade-up">Real Stories</span>
-    <h2 class="section-title fade-up">Customers Who <span>Made the Switch</span></h2>
-    <p class="section-sub fade-up">Join 15,000+ happy households and businesses already saving with Yatharth Sungrid Energy.</p>
-    <div class="testi-grid">
-      <div class="testi-card fade-up">
-        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p class="testi-text">"Our monthly bill dropped from ₹8,500 to just ₹700! The team was professional, installation took only one day, and the app makes it easy to track everything."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">RK</div>
-          <div>
-            <div class="testi-name">Rajesh Kumar</div>
-            <div class="testi-location"><i class="fa-solid fa-location-dot" style="font-size:11px;color:var(--green-400)"></i> Jaipur, Rajasthan</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card fade-up" style="transition-delay:0.1s">
-        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p class="testi-text">"We installed a 10kW system for our factory. ROI in under 4 years is incredible. SunForce handled everything from design to grid connectivity."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">PS</div>
-          <div>
-            <div class="testi-name">Priya Sharma</div>
-            <div class="testi-location"><i class="fa-solid fa-location-dot" style="font-size:11px;color:var(--green-400)"></i> Pune, Maharashtra</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card fade-up" style="transition-delay:0.2s">
-        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
-        <p class="testi-text">"Our housing society of 120 flats saves ₹2 lakh per month on common area electricity. Yatharth Sungrid Energy managed subsidy paperwork and it was completely hassle-free."</p>
-        <div class="testi-author">
-          <div class="testi-avatar">AM</div>
-          <div>
-            <div class="testi-name">Anita Mehta</div>
-            <div class="testi-location"><i class="fa-solid fa-location-dot" style="font-size:11px;color:var(--green-400)"></i> Ahmedabad, Gujarat</div>
-          </div>
-        </div>
-      </div>
-      <div class="testi-card fade-up" style="transition-delay:0.3s">
-        <div class="testi-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-        <p class="testi-text">"From the site visit to final installation, the Yatharth Sungrid Energy team was transparent with pricing and timelines. My bill reduced by 85% within the first month!"</p>
-        <div class="testi-author">
-          <div class="testi-avatar">VP</div>
-          <div>
-            <div class="testi-name">Vikram Patel</div>
-            <div class="testi-location"><i class="fa-solid fa-location-dot" style="font-size:11px;color:var(--green-400)"></i> Surat, Gujarat</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== LEAD FORM ===================== -->
-<section id="contact">
-  <div class="section-inner">
-    <div class="contact-wrap">
-      <!-- Left Info -->
-      <div class="contact-info fade-up">
-        <span class="section-label">Let's Talk</span>
-        <h2>Get Your <span>Free Solar Quote</span> Today</h2>
-        <p>Fill out the form and our solar advisor will call you within 2 hours with a customised proposal — completely free, no obligations.</p>
-        <div class="contact-perks">
-          <div class="contact-perk"><i class="fa-solid fa-circle-check"></i> Free site assessment worth ₹2,000</div>
-          <div class="contact-perk"><i class="fa-solid fa-circle-check"></i> Subsidy calculation included</div>
-          <div class="contact-perk"><i class="fa-solid fa-circle-check"></i> No obligation, no pressure</div>
-          <div class="contact-perk"><i class="fa-solid fa-circle-check"></i> Response within 2 hours</div>
-        </div>
-      </div>
-      <!-- Right Form -->
-      <div class="fade-up" style="transition-delay:0.15s">
-        <form class="lead-form" id="leadForm" novalidate>
-          <h3>Request a Free Consultation</h3>
-          <p class="form-sub">We'll get back to you within 2 business hours.</p>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Full Name *</label>
-              <input type="text" id="name" placeholder="Rajesh Kumar" autocomplete="name" />
-              <span class="form-error" id="name-err">Please enter your name.</span>
-            </div>
-            <div class="form-group">
-              <label for="phone">Phone Number *</label>
-              <input type="tel" id="phone" placeholder="+91 98765 43210" autocomplete="tel" />
-              <span class="form-error" id="phone-err">Enter a valid 10-digit number.</span>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="city">City *</label>
-              <input type="text" id="city" placeholder="Jaipur" autocomplete="address-level2" />
-              <span class="form-error" id="city-err">Please enter your city.</span>
-            </div>
-            <div class="form-group">
-              <label for="bill">Monthly Electricity Bill *</label>
-              <select id="bill">
-                <option value="">Select range</option>
-                <option>Below ₹1,000</option>
-                <option>₹1,000 – ₹3,000</option>
-                <option>₹3,000 – ₹6,000</option>
-                <option>₹6,000 – ₹10,000</option>
-                <option>Above ₹10,000</option>
-              </select>
-              <span class="form-error" id="bill-err">Please select your bill range.</span>
-            </div>
-          </div>
-          <button type="submit" class="btn-submit"><i class="fa-solid fa-bolt"></i>&nbsp; Get My Free Quote</button>
-          <div id="form-success"><i class="fa-solid fa-circle-check" style="color:var(--green-500)"></i>&nbsp; Thank you! Our team will call you within 2 hours.</div>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== FOOTER ===================== -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <!-- Brand -->
-      <div class="footer-brand">
-        <a href="#" class="nav-logo" style="margin-bottom:4px">
-          <div class="nav-logo-icon"><i class="fa-solid fa-solar-panel"></i></div>
-          <span class="nav-logo-text">Yatharth<span>SungridEnergy</span></span>
+  <div class="page">
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#home" aria-label="Yatharth Sungrid Energy home">
+          <span class="brand-mark"><i class="fa-solid fa-solar-panel"></i></span>
+          <span>Yatharth Sungrid Energy</span>
         </a>
-        <p>India's most trusted solar energy company. Making clean power accessible, affordable, and hassle-free for every home and business.</p>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#solutions">Solutions</a>
+          <a href="#process">Process</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <a class="nav-phone" href="tel:+919876543210">+91 98765 43210</a>
+          <a class="btn btn-primary" href="#contact">Get a Quote</a>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#services">Services</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#process">Process</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-main reveal">
+            <div class="hero-kicker"><i class="fa-solid fa-leaf"></i> India's trusted solar company</div>
+            <h1>Energy solutions <span>that power your future</span></h1>
+            <p class="hero-text">Clean rooftop solar, backup power, water heating, and grid-ready energy systems for homes, societies, businesses, schools, hospitals, and hotels.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#contact"><i class="fa-solid fa-phone"></i> Get Free Consultation</a>
+              <a class="btn btn-ghost" href="#process"><i class="fa-regular fa-circle-play"></i> See How It Works</a>
+            </div>
+          </div>
+
+          <div class="hero-stats reveal">
+            <div class="hero-stat"><strong>15,000+</strong><span>Installations done</span></div>
+            <div class="hero-stat"><strong>90%</strong><span>Possible bill reduction</span></div>
+            <div class="hero-stat"><strong>25+</strong><span>Year panel lifespan</span></div>
+            <div class="hero-stat"><strong>₹0</strong><span>Site visit cost</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="intro-strip">
+        <div class="container intro-grid">
+          <div class="intro-item">
+            <i class="fa-solid fa-indian-rupee-sign"></i>
+            <div><strong>Subsidy Support</strong><span>PM Surya Ghar subsidies up to ₹78,000 with paperwork guidance.</span></div>
+          </div>
+          <div class="intro-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div><strong>Reliable Systems</strong><span>Tier 1 panels, certified technicians, and long performance warranties.</span></div>
+          </div>
+          <div class="intro-item">
+            <i class="fa-solid fa-bolt"></i>
+            <div><strong>Built for Savings</strong><span>Custom layouts that help reduce monthly electricity costs from day one.</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow"><i class="fa-solid fa-sun"></i> What We Offer</span>
+              <h2 class="section-title">Solar solutions for every need</h2>
+            </div>
+            <p class="section-copy">From single homes to large commercial complexes, we design and install custom solar systems tailored to your energy requirements.</p>
+          </div>
+
+          <div class="services-grid">
+            <article class="card service-card reveal">
+              <div class="icon-box"><i class="fa-solid fa-house"></i></div>
+              <div>
+                <h3>Home Solar</h3>
+                <p>Reduce your home electricity bill drastically with rooftop solar. Easy EMI options and government subsidy support available.</p>
+              </div>
+            </article>
+
+            <article class="card service-card reveal">
+              <div class="icon-box"><i class="fa-solid fa-building"></i></div>
+              <div>
+                <h3>Society Solar</h3>
+                <p>Power your entire housing society with shared solar rooftops, reduce common area maintenance costs, and earn credits from surplus generation.</p>
+              </div>
+            </article>
+
+            <article class="card service-card reveal">
+              <div class="icon-box"><i class="fa-solid fa-industry"></i></div>
+              <div>
+                <h3>Business Solar</h3>
+                <p>Scale commercial operations sustainably with CAPEX savings, accelerated depreciation benefits, and ESG-ready energy systems.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section solutions" id="solutions">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow"><i class="fa-solid fa-layer-group"></i> Sustainable Energy Systems</span>
+              <h2 class="section-title">Solar power for modern buildings</h2>
+            </div>
+            <p class="section-copy">A practical portfolio for schools, hospitals, hotels, rooftops, backup power, water heating, and both grid-tied or off-grid setups.</p>
+          </div>
+
+          <div class="solution-grid">
+            <article class="solution-card large reveal" style="--image:url('https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?w=1200&q=80')">
+              <div>
+                <h3>Schools, Hospitals & Hotels</h3>
+                <p>High-demand sites need dependable solar design, clean installation, and clear long-term savings.</p>
+              </div>
+            </article>
+
+            <article class="solution-card reveal" style="--image:url('https://images.unsplash.com/photo-1509391366360-2e959784a276?w=900&q=80')">
+              <div>
+                <h3>Solar Rooftop</h3>
+                <p>Maximize savings with well-planned rooftop capacity.</p>
+              </div>
+            </article>
+
+            <article class="solution-card reveal" style="--image:url('https://images.unsplash.com/photo-1624397640148-949b1732bb0a?w=900&q=80')">
+              <div>
+                <h3>Power Backup & Storage</h3>
+                <p>Battery-ready systems for better energy security.</p>
+              </div>
+            </article>
+
+            <article class="solution-card reveal" style="--image:url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=900&q=80')">
+              <div>
+                <h3>Solar Water Heating</h3>
+                <p>Efficient hot-water systems for homes and institutions.</p>
+              </div>
+            </article>
+
+            <article class="solution-card reveal" style="--image:url('https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=900&q=80')">
+              <div>
+                <h3>Grid-Tied & Off-Grid</h3>
+                <p>Choose the right system for your location and usage.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="process">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow"><i class="fa-solid fa-route"></i> The Process</span>
+              <h2 class="section-title">Go solar in 4 simple steps</h2>
+            </div>
+            <p class="section-copy">From your first call to generating electricity, our end-to-end process is smooth, transparent, and stress-free.</p>
+          </div>
+
+          <div class="process-grid">
+            <article class="card step-card reveal">
+              <span class="step-number">01</span>
+              <h3>Free Consultation</h3>
+              <p>Talk to our solar expert. Share your electricity bill and rooftop details. Get a customised proposal.</p>
+            </article>
+
+            <article class="card step-card reveal">
+              <span class="step-number">02</span>
+              <h3>Site Survey & Design</h3>
+              <p>Our engineers visit your site, assess shading, and design the optimal solar system layout for you.</p>
+            </article>
+
+            <article class="card step-card reveal">
+              <span class="step-number">03</span>
+              <h3>Installation</h3>
+              <p>Certified technicians install your panels in 1-2 days. We handle permits and grid-connection paperwork.</p>
+            </article>
+
+            <article class="card step-card reveal">
+              <span class="step-number">04</span>
+              <h3>Savings Begin</h3>
+              <p>Start generating clean energy from day one. Monitor output and watch your savings grow.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section benefits" id="benefits">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow"><i class="fa-solid fa-seedling"></i> Why Solar</span>
+              <h2 class="section-title">The clear benefits of going solar today</h2>
+            </div>
+            <p class="section-copy">Investing in solar is investing in your future. Thousands of Indian families choose Yatharth Sungrid Energy for savings, reliability, and clean power.</p>
+          </div>
+
+          <div class="benefits-grid">
+            <article class="card benefit-card reveal">
+              <div class="icon-box"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <h3>Save Money</h3>
+              <p>Slash electricity bills by up to 90% from month one. Your system can pay for itself in 4-5 years and save for 25+ more.</p>
+            </article>
+
+            <article class="card benefit-card reveal">
+              <div class="icon-box"><i class="fa-solid fa-file-invoice"></i></div>
+              <h3>Government Subsidy</h3>
+              <p>Avail PM Surya Ghar subsidies up to ₹78,000. Our team handles documentation and approvals on your behalf.</p>
+            </article>
+
+            <article class="card benefit-card reveal">
+              <div class="icon-box"><i class="fa-solid fa-earth-asia"></i></div>
+              <h3>Eco-Friendly</h3>
+              <p>One rooftop solar system offsets over 1.5 tonnes of CO2 per year, equivalent to planting 70 trees annually.</p>
+            </article>
+
+            <article class="card benefit-card reveal">
+              <div class="icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+              <h3>25+ Year Lifespan</h3>
+              <p>Top-tier panels with 25-year performance warranties. Low-maintenance and built for Indian weather.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section testimonials" id="reviews">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <span class="eyebrow"><i class="fa-solid fa-star"></i> Real Stories</span>
+              <h2 class="section-title">Customers who made the switch</h2>
+            </div>
+            <p class="section-copy">Join 15,000+ happy households and businesses already saving with Yatharth Sungrid Energy.</p>
+          </div>
+
+          <div class="testimonial-grid">
+            <article class="card testimonial-card reveal">
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="quote">"Our monthly bill dropped from ₹8,500 to just ₹700. The team was professional, installation took only one day, and tracking is easy."</p>
+              <div class="person"><div class="avatar">RK</div><div><strong>Rajesh Kumar</strong><span>Jaipur, Rajasthan</span></div></div>
+            </article>
+
+            <article class="card testimonial-card reveal">
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="quote">"We installed a 10kW system for our factory. ROI in under 4 years is incredible. The team handled design to grid connectivity."</p>
+              <div class="person"><div class="avatar">PS</div><div><strong>Priya Sharma</strong><span>Pune, Maharashtra</span></div></div>
+            </article>
+
+            <article class="card testimonial-card reveal">
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
+              <p class="quote">"Our housing society of 120 flats saves ₹2 lakh per month on common area electricity. Subsidy paperwork was hassle-free."</p>
+              <div class="person"><div class="avatar">AM</div><div><strong>Anita Mehta</strong><span>Ahmedabad, Gujarat</span></div></div>
+            </article>
+
+            <article class="card testimonial-card reveal">
+              <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+              <p class="quote">"From site visit to final installation, the team was transparent with pricing and timelines. My bill reduced by 85% in the first month."</p>
+              <div class="person"><div class="avatar">VP</div><div><strong>Vikram Patel</strong><span>Surat, Gujarat</span></div></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact" id="contact">
+        <div class="container contact-grid">
+          <div class="contact-panel reveal">
+            <span class="eyebrow"><i class="fa-solid fa-message"></i> Let's Talk</span>
+            <h2 class="section-title">Get your free solar quote today</h2>
+            <p class="section-copy">Tell us about your property and solar requirement. Our advisor will contact you with a customised proposal.</p>
+            <ul class="contact-list">
+              <li><i class="fa-solid fa-circle-check"></i> Free site assessment</li>
+              <li><i class="fa-solid fa-circle-check"></i> Subsidy calculation included</li>
+              <li><i class="fa-solid fa-circle-check"></i> No obligation, no pressure</li>
+              <li><i class="fa-solid fa-circle-check"></i> Response within 2 hours</li>
+            </ul>
+          </div>
+
+          <form class="lead-form reveal" id="leadForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+            <h3 class="form-title">Contact / Get Quote</h3>
+            <p class="form-sub">Replace the Formspree URL with your own endpoint before publishing.</p>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Rajesh Kumar" autocomplete="name" required />
+                <span class="form-error" id="name-err">Please enter your name.</span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" required />
+                <span class="form-error" id="email-err">Please enter a valid email.</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number Optional</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+              <span class="form-error" id="phone-err">Enter a valid 10-digit number or leave it blank.</span>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" placeholder="Tell us about your property, electricity bill, or solar requirement." required></textarea>
+              <span class="form-error" id="message-err">Please enter your message.</span>
+            </div>
+
+            <button class="btn btn-submit" type="submit"><i class="fa-solid fa-bolt"></i> Get My Free Quote</button>
+            <div class="form-success" id="form-success"><i class="fa-solid fa-circle-check"></i> Thank you! Your quote request has been submitted.</div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <a class="brand" href="#home">
+              <span class="brand-mark"><i class="fa-solid fa-solar-panel"></i></span>
+              <span>Yatharth Sungrid Energy</span>
+            </a>
+            <p>India's most trusted solar energy company. Making clean power accessible, affordable, and hassle-free for every home and business.</p>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+
+          <div>
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Careers</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#services">Home Solar</a></li>
+              <li><a href="#services">Society Solar</a></li>
+              <li><a href="#services">Business Solar</a></li>
+              <li><a href="#solutions">Solar Finance</a></li>
+              <li><a href="#solutions">AMC & Service</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Contact Us</h3>
+            <ul>
+              <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+              <li><a href="mailto:hello@yatharthsungrid.in">hello@yatharthsungrid.in</a></li>
+              <li>12, Solar House, Tonk Road, Jaipur - 302001</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 Yatharth Sungrid Energy Pvt. Ltd. All rights reserved.</span>
+          <span>Privacy Policy · Terms of Service · Sitemap</span>
         </div>
       </div>
-      <!-- Links -->
-      <div class="footer-col">
-        <h4>Company</h4>
-        <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Our Team</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Press</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="#">Home Solar</a></li>
-          <li><a href="#">Society Solar</a></li>
-          <li><a href="#">Business Solar</a></li>
-          <li><a href="#">Solar Finance</a></li>
-          <li><a href="#">AMC & Service</a></li>
-        </ul>
-      </div>
-      <!-- Contact -->
-      <div class="footer-col">
-        <h4>Contact Us</h4>
-        <div class="footer-contact-item"><i class="fa-solid fa-phone"></i><span>+91 98765 43210</span></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-envelope"></i><span>hello@yatharthsungrid.in</span></div>
-        <div class="footer-contact-item"><i class="fa-solid fa-location-dot"></i><span>12, Solar House, Tonk Road, Jaipur – 302001</span></div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2025 Yatharth Sungrid Energy Pvt. Ltd. All rights reserved.</span>
-      <span>Privacy Policy &nbsp;·&nbsp; Terms of Service &nbsp;·&nbsp; Sitemap</span>
-    </div>
+    </footer>
   </div>
-</footer>
 
-<!-- ===================== JAVASCRIPT ===================== -->
-<script>
-  /* --- Navbar scroll effect --- */
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    navbar.classList.toggle('scrolled', window.scrollY > 40);
-  });
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-  /* --- Hamburger menu toggle --- */
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobile-menu');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    mobileMenu.classList.toggle('open');
-    hamburger.setAttribute('aria-expanded', mobileMenu.classList.contains('open'));
-  });
-  /* Close menu on link click */
-  mobileMenu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      mobileMenu.classList.remove('open');
+    menuToggle.addEventListener("click", () => {
+      const isOpen = mobileMenu.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", isOpen);
+      menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     });
-  });
 
-  /* --- Scroll fade-in (IntersectionObserver) --- */
-  const fadeEls = document.querySelectorAll('.fade-up');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        observer.unobserve(e.target);
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+
+    const form = document.getElementById("leadForm");
+    const formSuccess = document.getElementById("form-success");
+
+    function showErr(fieldId, errId, show) {
+      const field = document.getElementById(fieldId);
+      const err = document.getElementById(errId);
+      field.classList.toggle("error", show);
+      err.classList.toggle("show", show);
+    }
+
+    function validateEmail(value) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    function validatePhone(value) {
+      if (!value.trim()) return true;
+      const cleaned = value.replace(/[\s\-()]/g, "");
+      return /^(\+91|91|0)?[6-9]\d{9}$/.test(cleaned);
+    }
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      let valid = true;
+      if (!name) { showErr("name", "name-err", true); valid = false; } else { showErr("name", "name-err", false); }
+      if (!validateEmail(email)) { showErr("email", "email-err", true); valid = false; } else { showErr("email", "email-err", false); }
+      if (!validatePhone(phone)) { showErr("phone", "phone-err", true); valid = false; } else { showErr("phone", "phone-err", false); }
+      if (!message) { showErr("message", "message-err", true); valid = false; } else { showErr("message", "message-err", false); }
+      if (!valid) return;
+
+      const button = form.querySelector(".btn-submit");
+      const originalText = button.innerHTML;
+      button.disabled = true;
+      button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
+
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: { Accept: "application/json" }
+        });
+
+        if (!response.ok) throw new Error("Form submission failed");
+
+        form.reset();
+        formSuccess.style.display = "block";
+        setTimeout(() => { formSuccess.style.display = "none"; }, 6000);
+      } catch (error) {
+        alert("Please replace the Formspree URL with your own endpoint before publishing.");
+      } finally {
+        button.disabled = false;
+        button.innerHTML = originalText;
       }
     });
-  }, { threshold: 0.12 });
-  fadeEls.forEach(el => observer.observe(el));
 
-  /* --- Form validation --- */
-  const form = document.getElementById('leadForm');
-
-  function showErr(fieldId, errId, show) {
-    const field = document.getElementById(fieldId);
-    const err = document.getElementById(errId);
-    field.classList.toggle('error', show);
-    err.classList.toggle('show', show);
-  }
-
-  function validatePhone(val) {
-    /* Accept 10-digit numbers, optionally starting with +91 or 0 */
-    const cleaned = val.replace(/[\s\-\(\)]/g, '');
-    return /^(\+91|91|0)?[6-9]\d{9}$/.test(cleaned);
-  }
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name  = document.getElementById('name').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const city  = document.getElementById('city').value.trim();
-    const bill  = document.getElementById('bill').value;
-
-    let valid = true;
-    if (!name)             { showErr('name',  'name-err',  true);  valid = false; } else { showErr('name',  'name-err',  false); }
-    if (!validatePhone(phone)) { showErr('phone', 'phone-err', true);  valid = false; } else { showErr('phone', 'phone-err', false); }
-    if (!city)             { showErr('city',  'city-err',  true);  valid = false; } else { showErr('city',  'city-err',  false); }
-    if (!bill)             { showErr('bill',  'bill-err',  true);  valid = false; } else { showErr('bill',  'bill-err',  false); }
-
-    if (valid) {
-      /* Simulate form submission — replace with real API call */
-      const btn = form.querySelector('.btn-submit');
-      btn.disabled = true;
-      btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>&nbsp; Submitting…';
-      setTimeout(() => {
-        form.reset();
-        btn.disabled = false;
-        btn.innerHTML = '<i class="fa-solid fa-bolt"></i>&nbsp; Get My Free Quote';
-        document.getElementById('form-success').style.display = 'block';
-        setTimeout(() => { document.getElementById('form-success').style.display = 'none'; }, 5000);
-      }, 1200);
-    }
-  });
-
-  /* Clear errors on input */
-  ['name','phone','city','bill'].forEach(id => {
-    document.getElementById(id).addEventListener('input', () => showErr(id, id+'-err', false));
-  });
-</script>
+    ["name", "email", "phone", "message"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", () => showErr(id, id + "-err", false));
+    });
+  </script>
 </body>
 </html>
