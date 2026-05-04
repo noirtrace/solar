@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src https: data:; style-src 'self' 'unsafe-inline' https:; font-src https: data:; script-src 'self' https:; connect-src 'self' https://formspree.io;" />
+  <meta http-equiv="X-Frame-Options" content="DENY" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="description" content="Yatharth Sungrid Energy provides clean, affordable solar energy for homes, societies, businesses, schools, hospitals, and hotels." />
   <meta name="keywords" content="solar energy, rooftop solar, solar installation India, solar panels, Yatharth Sungrid Energy" />
   <title>Yatharth Sungrid Energy | Clean Solar Power Solutions</title>
@@ -1486,9 +1489,10 @@
             <p class="section-copy">Your review helps new customers trust the process and helps us improve our solar service quality.</p>
           </div>
 
-          <form class="feedback-form reveal" id="feedbackForm" action="https://formspree.io/f/YOUR_REVIEW_FORM_ID" method="POST" novalidate>
+          <form class="feedback-form reveal" id="feedbackForm" action="https://formspree.io/f/xlgzgqlj" method="POST" novalidate>
             <h3 class="form-title">Customer Review / Feedback</h3>
             <p class="form-sub">Rate your experience and tell us what went well.</p>
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
             <label class="form-group">
               <span style="display:block;margin-bottom:8px;color:var(--ink);font-size:13px;font-weight:800;">Star Rating *</span>
@@ -1525,6 +1529,7 @@
 
             <button class="btn btn-submit" type="submit"><i class="fa-solid fa-paper-plane"></i> Submit Feedback</button>
             <div class="form-success" id="feedback-success"><i class="fa-solid fa-circle-check"></i> Thank you! Your feedback has been submitted.</div>
+            <div class="form-error" id="feedback-submit-err">Something went wrong. Please try again or use WhatsApp.</div>
           </form>
         </div>
       </section>
@@ -1548,9 +1553,10 @@
             </div>
           </div>
 
-          <form class="lead-form reveal" id="leadForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <form class="lead-form reveal" id="leadForm" action="https://formspree.io/f/xlgzgqlj" method="POST" novalidate>
             <h3 class="form-title">Request a Free Quote</h3>
             <p class="form-sub">We will contact you within 24 hours. Prefer WhatsApp? Click the button above for faster response.</p>
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
 
             <div class="form-row">
               <div class="form-group">
@@ -1580,6 +1586,7 @@
 
             <button class="btn btn-submit" type="submit"><i class="fa-solid fa-bolt"></i> Get My Free Quote</button>
             <div class="form-success" id="form-success"><i class="fa-solid fa-circle-check"></i> Thank you! Your quote request has been submitted.</div>
+            <div class="form-error" id="form-submit-err">Something went wrong. Please try again or use WhatsApp.</div>
           </form>
         </div>
       </section>
@@ -1646,164 +1653,6 @@
     </footer>
   </div>
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = mobileMenu.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", isOpen);
-      menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-    });
-
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        mobileMenu.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
-      });
-    });
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
-
-    const form = document.getElementById("leadForm");
-    const formSuccess = document.getElementById("form-success");
-
-    function showErr(fieldId, errId, show) {
-      const field = document.getElementById(fieldId);
-      const err = document.getElementById(errId);
-      field.classList.toggle("error", show);
-      err.classList.toggle("show", show);
-    }
-
-    function validateEmail(value) {
-      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    }
-
-    function validatePhone(value) {
-      if (!value.trim()) return true;
-      const cleaned = value.replace(/[\s\-()]/g, "");
-      return /^(\+91|91|0)?[6-9]\d{9}$/.test(cleaned);
-    }
-
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const message = document.getElementById("message").value.trim();
-
-      let valid = true;
-      if (!name) { showErr("name", "name-err", true); valid = false; } else { showErr("name", "name-err", false); }
-      if (!validateEmail(email)) { showErr("email", "email-err", true); valid = false; } else { showErr("email", "email-err", false); }
-      if (!validatePhone(phone)) { showErr("phone", "phone-err", true); valid = false; } else { showErr("phone", "phone-err", false); }
-      if (!message) { showErr("message", "message-err", true); valid = false; } else { showErr("message", "message-err", false); }
-      if (!valid) return;
-
-      const button = form.querySelector(".btn-submit");
-      const originalText = button.innerHTML;
-      button.disabled = true;
-      button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
-
-      try {
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { Accept: "application/json" }
-        });
-
-        if (!response.ok) throw new Error("Form submission failed");
-
-        form.reset();
-        formSuccess.style.display = "block";
-        setTimeout(() => { formSuccess.style.display = "none"; }, 6000);
-      } catch (error) {
-        alert("Please replace the Formspree URL with your own endpoint before publishing.");
-      } finally {
-        button.disabled = false;
-        button.innerHTML = originalText;
-      }
-    });
-
-    ["name", "email", "phone", "message"].forEach((id) => {
-      document.getElementById(id).addEventListener("input", () => showErr(id, id + "-err", false));
-    });
-
-    /* Review form: clickable star rating + separate Formspree submit */
-    const feedbackForm = document.getElementById("feedbackForm");
-    const feedbackSuccess = document.getElementById("feedback-success");
-    const ratingInput = document.getElementById("review-rating");
-    const ratingStars = document.querySelectorAll(".rating-star");
-
-    function paintStars(value) {
-      ratingStars.forEach((star) => {
-        star.classList.toggle("active", Number(star.dataset.rating) <= Number(value));
-      });
-    }
-
-    ratingStars.forEach((star) => {
-      star.addEventListener("click", () => {
-        ratingInput.value = star.dataset.rating;
-        paintStars(ratingInput.value);
-        showErr("review-rating", "review-rating-err", false);
-      });
-    });
-
-    feedbackForm.addEventListener("submit", async (event) => {
-      event.preventDefault();
-
-      const rating = ratingInput.value;
-      const reviewName = document.getElementById("review-name").value.trim();
-      const reviewEmail = document.getElementById("review-email").value.trim();
-      const reviewFeedback = document.getElementById("review-feedback").value.trim();
-
-      let valid = true;
-      if (!rating) { showErr("review-rating", "review-rating-err", true); valid = false; } else { showErr("review-rating", "review-rating-err", false); }
-      if (!reviewName) { showErr("review-name", "review-name-err", true); valid = false; } else { showErr("review-name", "review-name-err", false); }
-      if (reviewEmail && !validateEmail(reviewEmail)) { showErr("review-email", "review-email-err", true); valid = false; } else { showErr("review-email", "review-email-err", false); }
-      if (!reviewFeedback) { showErr("review-feedback", "review-feedback-err", true); valid = false; } else { showErr("review-feedback", "review-feedback-err", false); }
-      if (!valid) return;
-
-      const button = feedbackForm.querySelector(".btn-submit");
-      const originalText = button.innerHTML;
-      button.disabled = true;
-      button.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Submitting...';
-
-      try {
-        const response = await fetch(feedbackForm.action, {
-          method: "POST",
-          body: new FormData(feedbackForm),
-          headers: { Accept: "application/json" }
-        });
-
-        if (!response.ok) throw new Error("Feedback submission failed");
-
-        feedbackForm.reset();
-        ratingInput.value = "";
-        paintStars(0);
-        feedbackSuccess.style.display = "block";
-        setTimeout(() => { feedbackSuccess.style.display = "none"; }, 6000);
-      } catch (error) {
-        alert("Please replace the review Formspree URL with your own endpoint before publishing.");
-      } finally {
-        button.disabled = false;
-        button.innerHTML = originalText;
-      }
-    });
-
-    ["review-name", "review-email", "review-feedback"].forEach((id) => {
-      document.getElementById(id).addEventListener("input", () => showErr(id, id + "-err", false));
-    });
-  </script>
+  <script src="script.js" defer></script>
 </body>
 </html>
