@@ -2,19 +2,21 @@
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 
-menuToggle.addEventListener("click", () => {
-  const isOpen = mobileMenu.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", isOpen);
-  menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
-});
-
-mobileMenu.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    mobileMenu.classList.remove("open");
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+if (menuToggle && mobileMenu) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = mobileMenu.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", isOpen);
+    menuToggle.innerHTML = isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
   });
-});
+
+  mobileMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+  });
+}
 
 // Subtle scroll reveal animation.
 const revealObserver = new IntersectionObserver((entries) => {
@@ -50,6 +52,7 @@ const form = document.getElementById("leadForm");
 const formSuccess = document.getElementById("form-success");
 const formSubmitError = document.getElementById("form-submit-err");
 
+if (form) {
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   formSubmitError.classList.remove("show");
@@ -92,8 +95,10 @@ form.addEventListener("submit", async (event) => {
 });
 
 ["name", "email", "phone", "message"].forEach((id) => {
-  document.getElementById(id).addEventListener("input", () => showErr(id, id + "-err", false));
+  const field = document.getElementById(id);
+  if (field) field.addEventListener("input", () => showErr(id, id + "-err", false));
 });
+}
 
 // Review form: clickable star rating and separate structured Formspree submit.
 const feedbackForm = document.getElementById("feedbackForm");
@@ -108,13 +113,14 @@ function paintStars(value) {
   });
 }
 
-ratingStars.forEach((star) => {
-  star.addEventListener("click", () => {
-    ratingInput.value = star.dataset.rating;
-    paintStars(ratingInput.value);
-    showErr("review-rating", "review-rating-err", false);
+if (feedbackForm) {
+  ratingStars.forEach((star) => {
+    star.addEventListener("click", () => {
+      ratingInput.value = star.dataset.rating;
+      paintStars(ratingInput.value);
+      showErr("review-rating", "review-rating-err", false);
+    });
   });
-});
 
 feedbackForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -160,5 +166,7 @@ feedbackForm.addEventListener("submit", async (event) => {
 });
 
 ["review-name", "review-email", "review-feedback"].forEach((id) => {
-  document.getElementById(id).addEventListener("input", () => showErr(id, id + "-err", false));
+  const field = document.getElementById(id);
+  if (field) field.addEventListener("input", () => showErr(id, id + "-err", false));
 });
+}
