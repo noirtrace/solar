@@ -327,15 +327,14 @@
       z-index: 1;
       width: 100%;
       padding: 150px 0 0;
-      display: grid;
-      grid-template-rows: 1fr auto;
+      display: flex;
+      align-items: center;
       min-height: 100vh;
     }
 
     .hero-main {
-      align-self: center;
       width: min(900px, 100%);
-      padding-bottom: 72px;
+      padding-bottom: 0;
     }
 
     .hero-kicker {
@@ -379,43 +378,6 @@
       flex-wrap: wrap;
       gap: 12px;
       margin-top: 30px;
-    }
-
-    .hero-stats {
-      width: min(860px, 100%);
-      margin-left: auto;
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      background: rgba(255,255,255,0.12);
-      border: 1px solid rgba(255,255,255,0.16);
-      border-bottom: 0;
-      backdrop-filter: blur(18px);
-    }
-
-    .hero-stat {
-      min-width: 0;
-      padding: 24px 22px;
-      border-left: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .hero-stat:first-child {
-      border-left: 0;
-    }
-
-    .hero-stat strong {
-      display: block;
-      color: #fff;
-      font-size: clamp(28px, 4vw, 46px);
-      line-height: 1;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-stat span {
-      display: block;
-      margin-top: 8px;
-      color: rgba(255,255,255,0.68);
-      font-size: 13px;
-      line-height: 1.35;
     }
 
     .intro-strip {
@@ -963,7 +925,7 @@
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.4fr repeat(3, 1fr);
+      grid-template-columns: 1.35fr repeat(4, 1fr);
       gap: 36px;
       margin-bottom: 38px;
     }
@@ -989,22 +951,6 @@
       display: grid;
       gap: 9px;
       list-style: none;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .social-links a {
-      width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: var(--radius);
-      background: rgba(255,255,255,0.08);
-      color: #fff;
     }
 
     .footer-bottom {
@@ -1066,13 +1012,6 @@
         max-width: 700px;
       }
 
-      .hero-stats {
-        width: min(760px, 100%);
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .hero-stats,
       .intro-grid,
       .services-grid,
       .benefits-grid,
@@ -1159,7 +1098,6 @@
         display: grid;
       }
 
-      .hero-stats,
       .intro-grid,
       .services-grid,
       .solution-grid,
@@ -1167,15 +1105,6 @@
       .benefits-grid,
       .testimonial-grid {
         grid-template-columns: 1fr;
-      }
-
-      .hero-stat {
-        border-left: 0;
-        border-top: 1px solid rgba(255,255,255,0.14);
-      }
-
-      .hero-stat:first-child {
-        border-top: 0;
       }
 
       .solution-grid {
@@ -1221,7 +1150,7 @@
         </div>
 
         <div class="nav-actions">
-          <a class="nav-phone" href="tel:+918769334466">+91 98765 43210</a>
+          <a class="nav-phone" href="tel:+918769334466">8769334466</a>
           <a class="btn btn-primary" href="#contact">Get a Quote</a>
           <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false">
             <i class="fa-solid fa-bars"></i>
@@ -1253,13 +1182,6 @@
               <a class="btn btn-ghost" href="#process"><i class="fa-regular fa-circle-play"></i> See How It Works</a>
             </div>
           </div>
-
-          <div class="hero-stats reveal">
-            <div class="hero-stat"><strong>15,000+</strong><span>Installations done</span></div>
-            <div class="hero-stat"><strong>80%</strong><span>Typical bill savings</span></div>
-            <div class="hero-stat"><strong>25+</strong><span>Year panel lifespan</span></div>
-            <div class="hero-stat"><strong>₹0</strong><span>Site visit cost</span></div>
-          </div>
         </div>
       </section>
 
@@ -1267,7 +1189,7 @@
         <div class="container intro-grid">
           <div class="intro-item">
             <i class="fa-solid fa-indian-rupee-sign"></i>
-            <div><strong>Govt Subsidy Available</strong><span>PM Surya Ghar subsidies up to ₹78,000 with paperwork guidance.</span></div>
+            <div><strong>Govt Subsidy Available</strong><span>PM Surya Ghar subsidies up to â‚¹78,000 with paperwork guidance.</span></div>
           </div>
           <div class="intro-item">
             <i class="fa-solid fa-shield-halved"></i>
@@ -1372,7 +1294,7 @@
           <div class="section-head reveal">
             <div>
               <span class="eyebrow"><i class="fa-solid fa-route"></i> The Process</span>
-              <h2 class="section-title">Go solar in 3 simple steps</h2>
+              <h2 class="section-title">Go solar in simple steps</h2>
             </div>
             <p class="section-copy">From your first call to monthly savings, our process is simple, transparent, and handled by solar professionals.</p>
           </div>
@@ -1450,32 +1372,32 @@
               <span class="eyebrow"><i class="fa-solid fa-star"></i> Real Stories</span>
               <h2 class="section-title">Customers who made the switch</h2>
             </div>
-            <p class="section-copy">Join 15,000+ happy households and businesses already saving with Yatharth Sungrid Energy.</p>
+            <p class="section-copy">Hear from households and businesses already saving with Yatharth Sungrid Energy.</p>
           </div>
 
           <div class="testimonial-grid">
             <article class="card testimonial-card reveal">
               <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
               <p class="quote">"Our monthly bill dropped from ₹8,500 to just ₹700. The team was professional, installation took only one day, and tracking is easy."</p>
-              <div class="person"><div class="avatar">RK</div><div><strong>Rajesh Kumar</strong><span>Jaipur, Rajasthan</span></div></div>
+              <div class="person"><div class="avatar">DP</div><div><strong>Dr. Pankaj</strong><span>Khatu, Rajasthan</span></div></div>
             </article>
 
             <article class="card testimonial-card reveal">
               <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-              <p class="quote">"We installed a 10kW system for our factory. ROI in under 4 years is incredible. The team handled design to grid connectivity."</p>
-              <div class="person"><div class="avatar">PS</div><div><strong>Priya Sharma</strong><span>Pune, Maharashtra</span></div></div>
+              <p class="quote">"We installed a 10kW system for our factory. ROI in under 2 years is incredible. The team handled design to grid connectivity."</p>
+              <div class="person"><div class="avatar">CY</div><div><strong>Chandan Yadav</strong><span>Jaipur, Rajasthan</span></div></div>
             </article>
 
             <article class="card testimonial-card reveal">
               <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></div>
-              <p class="quote">"Our housing society of 120 flats saves ₹2 lakh per month on common area electricity. Subsidy paperwork was hassle-free."</p>
-              <div class="person"><div class="avatar">AM</div><div><strong>Anita Mehta</strong><span>Ahmedabad, Gujarat</span></div></div>
+              <p class="quote">"Our home saves significantly on monthly electricity bills with solar energy. The installation process was smooth and hassle-free."</p>
+              <div class="person"><div class="avatar">KS</div><div><strong>Dr. Karan Singh</strong><span>Chomu, Rajasthan</span></div></div>
             </article>
 
             <article class="card testimonial-card reveal">
               <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
               <p class="quote">"From site visit to final installation, the team was transparent with pricing and timelines. My bill reduced by 85% in the first month."</p>
-              <div class="person"><div class="avatar">VP</div><div><strong>Vikram Patel</strong><span>Surat, Gujarat</span></div></div>
+              <div class="person"><div class="avatar">RK</div><div><strong>Rakesh Kumar</strong><span>Jaipur, Rajasthan</span></div></div>
             </article>
           </div>
         </div>
@@ -1489,7 +1411,7 @@
             <p class="section-copy">Your review helps new customers trust the process and helps us improve our solar service quality.</p>
           </div>
 
-          <form class="feedback-form reveal" id="feedbackForm" action="https://formspree.io/f/xlgzgqlj" method="POST" novalidate>
+          <form class="feedback-form reveal" id="feedbackForm" action="https://formspree.io/f/xvkakldd" method="POST" novalidate>
             <h3 class="form-title">Customer Review / Feedback</h3>
             <p class="form-sub">Rate your experience and tell us what went well.</p>
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
@@ -1553,7 +1475,7 @@
             </div>
           </div>
 
-          <form class="lead-form reveal" id="leadForm" action="https://formspree.io/f/xlgzgqlj" method="POST" novalidate>
+          <form class="lead-form reveal" id="leadForm" action="https://formspree.io/f/xvkakldd" method="POST" novalidate>
             <h3 class="form-title">Request a Free Quote</h3>
             <p class="form-sub">We will contact you within 24 hours. Prefer WhatsApp? Click the button above for faster response.</p>
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
@@ -1574,7 +1496,7 @@
 
             <div class="form-group">
               <label for="phone">Phone Number Optional</label>
-              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" autocomplete="tel" />
+              <input type="tel" id="phone" name="phone" placeholder="8769334466" autocomplete="tel" />
               <span class="form-error" id="phone-err">Enter a valid 10-digit number or leave it blank.</span>
             </div>
 
@@ -1605,22 +1527,13 @@
               <span>Yatharth Sungrid Energy</span>
             </a>
             <p>India's most trusted solar energy company. Making clean power accessible, affordable, and hassle-free for every home and business.</p>
-            <div class="social-links">
-              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-              <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-            </div>
           </div>
 
           <div>
             <h3>Company</h3>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Our Team</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Press</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="team.html">Our Team</a></li>
             </ul>
           </div>
 
@@ -1631,16 +1544,23 @@
               <li><a href="#services">Society Solar</a></li>
               <li><a href="#services">Business Solar</a></li>
               <li><a href="#solutions">Solar Finance</a></li>
-              <li><a href="#solutions">AMC & Service</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3>Support</h3>
+            <ul>
+              <li><a href="#solutions">AMC</a></li>
+              <li><a href="#contact">Services</a></li>
             </ul>
           </div>
 
           <div>
             <h3>Contact Us</h3>
             <ul>
-              <li><a href="tel:+918769334466">+91 98765 43210</a></li>
-              <li><a href="mailto:hello@yatharthsungrid.in">hello@yatharthsungrid.in</a></li>
-              <li>12, Solar House, Tonk Road, Jaipur - 302001</li>
+              <li><a href="tel:+918769334466">8769334466</a></li>
+              <li><a href="mailto:yatharthsungridenergy@gmail.com">yatharthsungridenergy@gmail.com</a></li>
+              <li>G.R. Residency, Achrol, Jaipur- 303002</li>
             </ul>
           </div>
         </div>
@@ -1656,3 +1576,4 @@
   <script src="script.js" defer></script>
 </body>
 </html>
+
